@@ -2,7 +2,7 @@ const regex = /\r?\n\r?\n<!-- bot: (?<reminder>{"reminders":.*) -->/;
 
 function getRemindersFromBody(body) {
   if (body === null) return [];
-
+  console.log(body);
   const match = body.match(regex);
 
   return match ? JSON.parse(match.groups.reminder).reminders : [];
