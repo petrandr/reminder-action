@@ -30123,7 +30123,7 @@ async function run() {
 
     core.startGroup('notify past due reminders');
     core.info(`sending ${reminders.length} past due notifications`);
-    core.info(pastDueReminders);
+    core.info(reminders);
     const metadata = createCommentsMetadata(pastDueReminders);
     core.info('kokos 2');
     for (let i = 0; i < metadata.length; i++) {
