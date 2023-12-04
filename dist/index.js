@@ -30125,9 +30125,11 @@ async function run() {
     core.info(`sending ${reminders.length} past due notifications`);
     core.info('kokos 1');
     const metadata = createCommentsMetadata(pastDueReminders);
+    core.info(metadata);
     core.info('kokos 2');
     for (let i = 0; i < metadata.length; i++) {
       const data = metadata[i];
+
       core.info(data);
       await octokit.rest.issues.createComment({
         ...data,
