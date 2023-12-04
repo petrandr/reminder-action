@@ -12,7 +12,7 @@ function getPastDueReminders(now, items) {
   return items.filter((item) => {
     try {
       const dueDate = Date.parse(item.reminder.when);
-      core.info(dueDate);
+      console.log(dueDate);
       return dueDate < now;
     } catch (error) {
       console.error('error parsing date', error);
