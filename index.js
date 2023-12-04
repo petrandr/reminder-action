@@ -92,6 +92,7 @@ async function run() {
 
     for (let i = 0; i < metadata.length; i++) {
       const data = metadata[i];
+      core.info(data);
       await octokit.rest.issues.createComment({
         ...data,
         ...getIssueProps(context),
