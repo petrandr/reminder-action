@@ -29733,9 +29733,12 @@ function getPastDueReminders(now, items) {
 
 function createCommentsMetadata(items) {
   return items.map((item) => {
+    const body = `:wave: @${item.reminder.who}, ${item.reminder.what}`;
+    core.info(body);
+    core.info(item.issueNumber);
     return {
       issue_number: item.issueNumber,
-      body: `:wave: @${item.reminder.who}, ${item.reminder.what}`,
+      body: body,
     };
   });
 }
@@ -30123,9 +30126,9 @@ async function run() {
 
     core.startGroup('notify past due reminders');
     core.info(`sending ${reminders.length} past due notifications`);
-    core.info(reminders);
+    core.info('kokosssssssss');
     const metadata = createCommentsMetadata(pastDueReminders);
-    core.info('kokos 2');
+
     for (let i = 0; i < metadata.length; i++) {
       const data = metadata[i];
       core.info(data);

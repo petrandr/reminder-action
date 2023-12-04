@@ -24,9 +24,12 @@ function getPastDueReminders(now, items) {
 
 function createCommentsMetadata(items) {
   return items.map((item) => {
+    const body = `:wave: @${item.reminder.who}, ${item.reminder.what}`;
+    core.info(body);
+    core.info(item.issueNumber);
     return {
       issue_number: item.issueNumber,
-      body: `:wave: @${item.reminder.who}, ${item.reminder.what}`,
+      body: body,
     };
   });
 }
