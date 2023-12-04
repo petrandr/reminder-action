@@ -29721,6 +29721,7 @@ function getPastDueReminders(now, items) {
   return items.filter((item) => {
     try {
       const dueDate = Date.parse(item.reminder.when);
+      console.log(item.reminder.when);
       console.log(dueDate);
       console.log(now);
       return dueDate < now;
